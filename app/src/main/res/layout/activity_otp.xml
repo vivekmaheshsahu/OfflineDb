@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:focusableInTouchMode="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:gravity="center"
+            android:text="Verify Mobile Number"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/guideline15"
+            app:layout_constraintStart_toStartOf="@+id/guideline14"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:gravity="center|left"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="Enter your mobile number"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/textView8"
+            app:layout_constraintStart_toStartOf="@+id/textView8"
+            app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_phone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline15"
+            app:layout_constraintStart_toStartOf="@+id/guideline14"
+            app:layout_constraintTop_toBottomOf="@+id/textView7">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/inputMobileNo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:errorEnabled="true"
+                    app:errorTextAppearance="@style/ErrorAppearance"
+                    app:hintTextAppearance="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edit_mobile_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@color/transparent"
+                        android:ems="10"
+                        android:hint="mobile number"
+                        android:inputType="phone"
+                        android:maxLength="10"
+                        android:textColorHighlight="#E79FA5"
+                        android:textColorLink="#FFFFFF" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <Button
+            android:id="@+id/btnSendOtp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/gradient_bg"
+            android:onClick="addEmp"
+            android:text="SEND OTP"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/card_phone"
+            app:layout_constraintStart_toStartOf="@+id/card_phone"
+            app:layout_constraintTop_toBottomOf="@+id/card_phone" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint_otp_pin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintEnd_toStartOf="@+id/guideline15"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnSendOtp">
+
+            <EditText
+                android:id="@+id/digit1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginLeft="28dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="20dp"
+                android:ems="1"
+                android:inputType="number"
+                android:maxLength="1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <EditText
+                android:id="@+id/digit2"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginStart="28dp"
+                android:layout_marginLeft="28dp"
+                android:ems="1"
+                android:inputType="number"
+                android:maxLength="1"
+                app:layout_constraintBottom_toBottomOf="@+id/digit1"
+                app:layout_constraintStart_toEndOf="@+id/digit1"
+                app:layout_constraintTop_toTopOf="@+id/digit1"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <EditText
+                android:id="@+id/digit3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginLeft="28dp"
+                android:ems="1"
+                android:inputType="number"
+                android:maxLength="1"
+                app:layout_constraintBottom_toBottomOf="@+id/digit2"
+                app:layout_constraintStart_toEndOf="@+id/digit2"
+                app:layout_constraintTop_toTopOf="@+id/digit2"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <EditText
+                android:id="@+id/digit4"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginStart="28dp"
+                android:layout_marginLeft="28dp"
+                android:layout_marginEnd="28dp"
+                android:layout_marginRight="28dp"
+                android:ems="1"
+                android:inputType="number"
+                android:maxLength="1"
+                app:layout_constraintBottom_toBottomOf="@+id/digit3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/digit3"
+                app:layout_constraintTop_toTopOf="@+id/digit3"
+                app:layout_constraintVertical_bias="0.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.58" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.03" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95507485" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/successfulImg"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/correct"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/constraint_otp_pin"
+            app:layout_constraintStart_toStartOf="@+id/constraint_otp_pin"
+            app:layout_constraintTop_toBottomOf="@+id/constraint_otp_pin" />
+
+        <!--<TextView
+            android:id="@+id/txtSuccessfulmsg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Verification Successfull.."
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/successfulImg"
+            app:layout_constraintStart_toStartOf="@+id/successfulImg"
+            app:layout_constraintTop_toBottomOf="@+id/successfulImg" />
+
+        <TextView
+            android:id="@+id/txtNextInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Click Next to Continue"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/txtSuccessfulmsg"
+            app:layout_constraintStart_toStartOf="@+id/txtSuccessfulmsg"
+            app:layout_constraintTop_toBottomOf="@+id/txtSuccessfulmsg" />
+
+        <Button
+            android:id="@+id/btnNext"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/gradient_bg"
+            android:drawableRight="@drawable/ic_next_button"
+            android:text="NEXT"
+            android:textColor="@color/black"
+            android:visibility="gone"
+            app:layout_constraintEnd_toStartOf="@+id/guideline15"
+            app:layout_constraintStart_toStartOf="@+id/guideline14"
+            app:layout_constraintTop_toBottomOf="@+id/txtNextInfo" />
+
+        <TextView
+            android:id="@+id/txtTimerValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:text="abc"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/btnSendOtp"
+            app:layout_constraintStart_toStartOf="@+id/btnSendOtp"
+            app:layout_constraintTop_toBottomOf="@+id/btnSendOtp" />
+-->
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
